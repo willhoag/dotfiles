@@ -1,0 +1,46 @@
+[user]
+    name = Will Hoag
+    email = dev@willhoag.com
+    username = willhoag
+[alias]
+    tags = tag
+    stashes = stash list
+    remotes = remote -v
+    aliases = config --get-regexp alias
+    unstage = reset -q HEAD --
+    untrack = rm -r --cached
+    discard = checkout --
+    uncommit = reset --mixed HEAD~
+    amend = commit --amend
+    nevermind = !git reset --hard HEAD && git clean -d -f
+    graph = log --graph --abbrev-commit --decorate --format=format:'%C(green)%h%C(reset) %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(red)%d%C(reset)%n' --all
+    contributors = shortlog -s -n
+    open = browse
+    repo = browse
+    list = ls-tree -r --full-tree --name-only HEAD
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    ui = always
+[core]
+    excludesfile = /Users/willhoag/.gitignore_global
+    editor = nvim
+[credential]
+    helper = osxkeychain
+[push]
+    default = current
+[filter "media"]
+    required = true
+    clean = git media clean %f
+    smudge = git media smudge %f
+[filter "hawser"]
+    clean = git hawser clean %f
+    smudge = git hawser smudge %f
+    required = true
+[github]
+    user = willhoag
+[help]
+    autocorrect = 1
+[commit]
+    gpgsign = true
