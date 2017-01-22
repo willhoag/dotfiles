@@ -75,6 +75,7 @@ Plug 'AndrewRadev/sideways.vim'
 Plug 'tpope/vim-unimpaired'
 Plug 'vim-scripts/undofile_warn.vim'
 Plug 'junegunn/vim-easy-align'
+Plug 'jeetsukumaran/vim-indentwise'
 
 " objects
 Plug 'wellle/targets.vim'

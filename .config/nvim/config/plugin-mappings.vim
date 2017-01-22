@@ -21,6 +21,12 @@ nmap s <Plug>(easymotion-s)
 nmap [h <Plug>GitGutterPrevHunk
 nmap ]h <Plug>GitGutterNextHunk
 
+" Move up / down at current indent level
+nmap <c-k> [=
+nmap <c-j> ]=
+vmap <c-k> [=
+vmap <c-j> ]=
+
 " Make bufexplorer split right
 let g:bufExplorerSplitRight=1
 

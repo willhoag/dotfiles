@@ -72,10 +72,10 @@ nmap go o<esc>
 nmap gO O<esc>
 
 " Move current line / visual line selection up or down.
-nnoremap <c-k> :m-2<CR>==
-nnoremap <c-j> :m+<CR>==
-vnoremap <c-j> :m'>+<CR>gv=gv
-vnoremap <c-k> :m-2<CR>gv=gv
+" nnoremap <c-k> :m-2<CR>==
+" nnoremap <c-j> :m+<CR>==
+" vnoremap <c-j> :m'>+<CR>gv=gv
+" vnoremap <c-k> :m-2<CR>gv=gv
 
 " Shortcuts to quickly switch to common file types; handy when using
 " editing abstractions like sudoedit(8)
