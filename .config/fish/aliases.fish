@@ -1,7 +1,16 @@
+# use coreutils ls
+# group by directories first
+# write human readable file sizes
+if test -e /usr/local/bin/gls
+    alias ls='/usr/local/bin/gls --color -h --group-directories-first'
+end
+
 alias o 'open'
 
 # alias neovim
-alias vim 'nvim'
+command -v nvim >/dev/null; and begin
+    alias vim 'nvim'
+end
 
 # alias vim
 alias e 'vim'
