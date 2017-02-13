@@ -42,6 +42,7 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-fugitive'
 Plug 'duggiefresh/vim-easydir'
 Plug 'phongvcao/vim-stardict'
+Plug 'ternjs/tern_for_vim'
 
 " completions
 Plug 'Shougo/deoplete.nvim'

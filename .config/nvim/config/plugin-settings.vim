@@ -18,6 +18,10 @@ let g:netrw_list_hide ='.DS_Store,.*\.swp$,.*\.pyc'
 " turn on omnicomplete
 let g:deoplete#enable_at_startup = 1
 
+" Use tern_for_vim.
+let g:tern#command = ["tern"]
+let g:tern#arguments = ["--persistent"]
+
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
