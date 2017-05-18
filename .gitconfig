@@ -14,10 +14,13 @@
     amend = commit --amend
     nevermind = !git reset --hard HEAD && git clean -d -f
     graph = log --graph --abbrev-commit --decorate --format=format:'%C(green)%h%C(reset) %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(red)%d%C(reset)%n' --all
+    glog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
     contributors = shortlog -s -n
     open = browse
     repo = browse
     list = ls-tree -r --full-tree --name-only HEAD
+    stash-all = stash save --include-untracked
+    undo = reset --soft HEAD^
 [color]
     diff = auto
     status = auto
@@ -25,7 +28,6 @@
     ui = always
 [core]
     excludesfile = /Users/willhoag/.gitignore_global
-    editor = nvim
 [credential]
     helper = osxkeychain
 [push]
@@ -44,3 +46,11 @@
     autocorrect = 1
 [commit]
     gpgsign = true
+[ghi]
+    token = !security find-internet-password -a willhoag -s github.com -l 'ghi token' -w
+[diff]
+  tool = icdiff
+[difftool]
+  prompt = false
+[difftool "icdiff"]
+  cmd = /usr/local/bin/icdiff --line-numbers $LOCAL $REMOTE
