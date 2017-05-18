@@ -15,15 +15,17 @@ let g:netrw_list_hide ='.DS_Store,.*\.swp$,.*\.pyc'
 " Make auto-close preview one BufUnload
 " autocmd! FileType netrw autocmd! BufUnload <buffer> pc
 
-" turn on omnicomplete
-let g:deoplete#enable_at_startup = 1
 
 " Use tern_for_vim.
 let g:tern#command = ["tern"]
-let g:tern#arguments = ["--persistent"]
+let g:tern#arguments = ["--persistent", "--no-port-file"]
 
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+" let g:UltiSnipsJumpForwardTrigger = "<tab>"
+" let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+" turn on omnicomplete
+let g:deoplete#enable_at_startup = 1
+let g:neosnippet#enable_completed_snippet = 1
 
 " multiple cursors
 hi multiple_cursors_cursor term=reverse cterm=reverse gui=reverse
@@ -57,6 +59,14 @@ autocmd! BufWritePost * Neomake " run neomake on save
 " Strip whitespace on save
 autocmd BufWritePre * StripWhitespace
 
+" Neoformat
+let g:neoformat_javascript_prettier_standard = {
+  \ 'exe': 'prettier-standard',
+  \ 'stdin': 1
+  \ }
+
+let g:neoformat_enabled_javascript = ['prettier_standard']
+
 " Activation based on file type
 augroup rainbow_lisp
   autocmd!
@@ -78,3 +88,4 @@ let g:pasta_disabled_filetypes = ['-']
 " hide in netrw
 " TODO -- This is getting overwritten by a plugin somewhere
 let g:netrw_list_hide = '.*\.swp$,\.DS_Store$,*\.so$,*\.swp$,*\.zip$,*\.git$'
+
