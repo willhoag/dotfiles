@@ -8,22 +8,57 @@ end
 alias o 'open'
 
 # alias neovim
-command -v nvim >/dev/null; and begin
+command -v nvim > /dev/null; and begin
     alias vim 'nvim'
 end
 
-# alias vim
-alias e 'vim'
+# irc chat
+command -v weechat > /dev/null; and begin
+    alias irc 'weechat'
+end
+
+
+# emacs
+command -v emacs > /dev/null; and begin
+    function em
+        emacsclient -t $argv; or begin
+            emacs --daemon; and emacsclient -t $argv
+        end
+    end
+end
+
+command -v terminal_velocity > /dev/null; and begin
+    alias nv 'terminal_velocity ~/Documents/notes'
+end
+
+if type notes > /dev/null
+    alias n 'notes'
+end
+
+# edit
+function e
+    eval $EDITOR $argv
+end
 
 # dotfiles management
-alias dotfiles 'git --git-dir=$HOME/.git-dotfiles/ --work-tree=$HOME'
+function dotfiles
+    if test -n "$GIT_DIR" -o -n "$GET_WORK_TREE"
+        set -ge GIT_DIR
+        set -ge GIT_WORK_TREE
+    else
+        set -gx GIT_DIR $HOME/.git-dotfiles/
+        set -gx GIT_WORK_TREE $HOME
+    end
+    true
+end
+
 
 # alias for dictionary lookups
 alias define 'sdcv'
 
 # Turn on and off terminal wrap
-alias wrapon 'tput rmam'
-alias wrapoff 'tput smam'
+alias wrap-on 'tput rmam'
+alias wrap-off 'tput smam'
 
 # pretty printing json
 # if ! type "$jq" > /dev/null; then
@@ -42,19 +77,27 @@ alias wrapoff 'tput smam'
 # Load a .env file
 alias env.load 'export (cat .env | xargs)'
 
-# virtualenv aliases
-# http://blog.doughellmann.com/2010/01/virtualenvwrapper-tips-and-tricks.html
-alias v 'workon'
-alias v.deactivate 'deactivate'
-alias v.mk 'mkvirtualenv --no-site-packages'
-alias v.mk_withsitepackages 'mkvirtualenv'
-alias v.rm 'rmvirtualenv'
-alias v.switch 'workon'
-alias v.add2virtualenv 'add2virtualenv'
-alias v.cdsitepackages 'cdsitepackages'
-alias v.cd 'cdvirtualenv'
-alias v.lssitepackages 'lssitepackages'
-alias v.list 'lsvirtualenv'
+# TODO -- Use https://github.com/adambrenecki/virtualfish
+# if test -e /usr/local/bin/virtualenvwrapper.sh
+#   export WORKON_HOME=$HOME/.virtualenvs
+#   export PIP_VIRTUALENV_BASE=$WORKON_HOME
+#   export PIP_RESPECT_VIRTUALENV=true
+#   export VIRTUAL_ENV_DISABLE_PROMPT=true
+#   source /usr/local/bin/virtualenvwrapper.sh
+#
+#   # virtualenv aliases
+#   # http://blog.doughellmann.com/2010/01/virtualenvwrapper-tips-and-tricks.html
+#   alias v='workon'
+#   alias v.deactivate='deactivate'
+#   alias v.mk='mkvirtualenv --no-site-packages'
+#   alias v.mk_withsitepackages='mkvirtualenv'
+#   alias v.rm='rmvirtualenv'
+#   alias v.switch='workon'
+#   alias v.add2virtualenv='add2virtualenv'
+#   alias v.cdsitepackages='cdsitepackages'
+#   alias v.cd='cdvirtualenv'
+#   alias v.lssitepackages='lssitepackages'
+# end
 
 # npm
 alias ni 'npm install'
@@ -80,7 +123,6 @@ alias dip "docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
 alias drd "docker run -d -P"
 alias dri "docker run -it -P"
 alias dex "docker exec -it"
-alias dmenv "eval (docker-machine env default)"
 
 # Stop all containers
 alias dstop 'docker stop (docker ps -a -q)'
@@ -93,6 +135,10 @@ alias drmf 'docker stop (docker ps -a -q); and docker rm (docker ps -a -q)'
 
 # Remove all images
 alias drmia 'docker rmi (docker images -q)'
+
+function dmenv
+    eval (docker-machine env $argv)
+end
 
 # Dockerfile build, e.g., $dbu tcnksm/test
 function dbu -a name
