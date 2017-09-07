@@ -18,7 +18,7 @@
  '(git-gutter:deleted-sign "_")
  '(package-selected-packages
    (quote
-    (evil-magit magit yaml-mode dockerfile-mode use-package dired-rainbow evil-mc git-gutter rainbow-delimiters evil-vimish-fold multi-line async evil-nerd-commenter better-defaults flycheck paradox which-key smartparens web-mode emmet-mode evil-indent-textobject markdown-mode company evil-surround swiper avy ivy evil-org org-bullets org fish-mode evil-terminal-cursor-changer darkokai-theme spaceline evil)))
+    (csv-mode js2-refactor evil-matchit evil-goggles evil-org indent-tools evil-indent-plus evil-magit magit yaml-mode dockerfile-mode use-package dired-rainbow evil-mc git-gutter rainbow-delimiters evil-vimish-fold multi-line evil-nerd-commenter better-defaults flycheck paradox which-key smartparens web-mode emmet-mode markdown-mode company evil-surround swiper avy ivy org-bullets org fish-mode evil-terminal-cursor-changer darkokai-theme spaceline evil)))
  '(paradox-automatically-star t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -26,6 +26,14 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+(setq auto-save-file-name-transforms `((".*" "~/.emacs.d/saves/" t)))
+(setq backup-directory-alist '((".*" . "~/.emacs.d/backups")))
+(setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
+(setq delete-old-versions t
+  kept-new-versions 6
+  kept-old-versions 2
+  version-control t)
 
 ;; (require 'better-defaults)
 (load "~/.emacs.secrets" t)
@@ -37,14 +45,12 @@
 (tool-bar-mode 0)
 (menu-bar-mode 0)
 
-(setq-default tab-width 4)
 (setq fill-column 80)
 (fset 'yes-or-no-p 'y-or-n-p)
 
 (add-hook 'prog-mode-hook 'whitespace-mode)
 (setq whitespace-style '(face tabs trailing linse-tail space-before-tab empty space-after-tab tab-mark))
 
-(setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
 (save-place-mode 1)
 
 (add-hook 'prog-mode-hook 'smartparens-mode)
@@ -66,7 +72,6 @@
 (require 'evil-leader)
 (evil-leader/set-leader ",")
 (global-evil-leader-mode)
-(require 'evil-org)
 (require 'evil-surround)
 (global-evil-surround-mode t)
 (require 'evil-mc)
@@ -159,7 +164,9 @@
 ;; emmet
 (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
 (add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
-(setq emmet-expand-jsx-className? t)
+
+;; TODO -- Add hook on .jsx files
+;; (setq emmet-expand-jsx-className? t)
 
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'prog-mode-hook 'linum-mode)
@@ -213,3 +220,31 @@
 (define-key evil-normal-state-map (kbd "C-w C-s") 'follow-evil-window-split)
 (define-key evil-normal-state-map (kbd "C-w v") 'follow-evil-window-vsplit)
 (define-key evil-normal-state-map (kbd "C-w C-v") 'follow-evil-window-vsplit)
+
+;; (add-hook 'js-mode-hook (lambda ()
+;;     (push '("function" . ?ƒ) prettify-symbols-alist)
+;;     (prettify-symbols-mode)))
+
+(require 'evil-matchit)
+(global-evil-matchit-mode 1)
+
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-hook 'js-mode-hook 'js2-minor-mode)
+(add-to-list 'interpreter-mode-alist '("node" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-jsx-mode))
+(add-to-list 'interpreter-mode-alist '("node" . js2-jsx-mode))
+(setq js2-mode-show-parse-errors nil)
+(setq js2-mode-show-strict-warnings nil)
+
+(require 'js2-refactor)
+(add-hook 'js2-mode-hook #'js2-refactor-mode)
+(js2r-add-keybindings-with-prefix "C-c C-m")
+
+(setq-default tab-width 4)
+
+(add-hook 'js-mode-hook (lambda ()
+    (setq tab-width 2)
+    (setq evil-shift-width 2)
+))
+
+(evil-indent-plus-default-bindings)
