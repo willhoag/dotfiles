@@ -8,11 +8,12 @@
     remotes = remote -v
     aliases = config --get-regexp alias
     unstage = reset -q HEAD --
+    uncommit = reset --mixed HEAD~
+    undo = reset --soft HEAD^
+    nevermind = !git reset --hard HEAD && git clean -d -f
     untrack = rm -r --cached
     discard = checkout --
-    uncommit = reset --mixed HEAD~
     amend = commit --amend
-    nevermind = !git reset --hard HEAD && git clean -d -f
     graph = log --graph --abbrev-commit --decorate --format=format:'%C(green)%h%C(reset) %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(red)%d%C(reset)%n' --all
     glog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
     contributors = shortlog -s -n
@@ -20,7 +21,6 @@
     repo = browse
     list = ls-tree -r --full-tree --name-only HEAD
     stash-all = stash save --include-untracked
-    undo = reset --soft HEAD^
     alias = "!f() { \
           if [ \"$#\" -ne 2 ]; then { echo >&2 \"Usage: git alias <name> <command>\"; exit 1; } fi; \
           git config --global alias.\"$1\" \"$2\"; \
@@ -89,3 +89,5 @@
   prompt = false
 [difftool "icdiff"]
   cmd = /usr/local/bin/icdiff --line-numbers $LOCAL $REMOTE
+[fetch]
+	prune = true

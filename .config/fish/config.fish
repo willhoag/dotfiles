@@ -1,6 +1,6 @@
 test -e $HOME/.iterm2_shell_integration.fish ; and source $HOME/.iterm2_shell_integration.fish
 
-export EDITOR="vim"
+export EDITOR="nvim"
 export QUOTING_STYLE=literal
 
 . ~/.config/fish/notes.fish
@@ -9,3 +9,4 @@ export QUOTING_STYLE=literal
 if type -q nvm
     nvm use default
 end
+

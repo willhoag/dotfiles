@@ -1,8 +1,10 @@
 edc/bass
 oh-my-fish/theme-bobthefish
+oh-my-fish/plugin-config
 decors/fish-docker-machine
 brigand/fast-nvm-fish
 fisherman/getopts
 fisherman/gitignore
+oh-my-fish/plugin-spark
 fisherman/spin
 fisherman/z

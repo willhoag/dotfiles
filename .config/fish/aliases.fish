@@ -7,6 +7,11 @@ end
 
 alias o 'open'
 
+# tmux
+function tma -a name
+    tmux attach -t $name; or tmux new -s $name\n
+end
+
 # alias neovim
 command -v nvim > /dev/null; and begin
     alias vim 'nvim'
@@ -52,9 +57,14 @@ function dotfiles
     true
 end
 
+function fish-k8s
+    set -g theme_display_k8s_context $argv
+end
 
 # alias for dictionary lookups
 alias define 'sdcv'
+
+alias uid 'uuidgen | tr -d '-' | tr A-Z a-z'
 
 # Turn on and off terminal wrap
 alias wrap-on 'tput rmam'
@@ -108,7 +118,7 @@ alias nt 'npm test'
 alias nit 'npm install; and npm test'
 alias nk 'npm link'
 alias nr 'npm run'
-alias nf 'npm cache clean; and rm -rf node_modules; and npm install'
+alias nf 'npm cache clean; and rm -rf node_modules; and yarn install'
 
 # docker
 alias d "docker"
@@ -154,6 +164,12 @@ end
 # Bash into running container
 function dbash -a name
     docker exec -it (docker ps -aqf "name=$name") bash
+end
+
+alias km 'minikube'
+alias k 'kubectl'
+function kmenv
+    eval (minikube docker-env); and export DOCKER_MACHINE_NAME="minikube"
 end
 
 
