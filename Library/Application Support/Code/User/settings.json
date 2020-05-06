@@ -22,14 +22,11 @@
         "suppressShowKeyBindingsNotice": true,
         "suppressWelcomeNotice": true
     },
-    "guides.enabled": false,
-    "vsicons.dontShowNewVersionMessage": true,
     "editor.minimap.enabled": false,
     "editor.formatOnSave": false,
     "prettier.semi": false,
     "prettier.singleQuote": true,
     "gitlens.keymap": "alternate",
-    "vsicons.presets.hideFolders": true,
     "editor.fontSize": 15,
     "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontLigatures": true,
@@ -48,11 +45,9 @@
         "theming",
         "webhooks"
     ],
-    "bracketPairColorizer.showHorizontalScopeLine": false,
     "zenMode.fullScreen": false,
     "zenMode.hideStatusBar": false,
     "gitlens.currentLine.enabled": false,
-    "gitHistory.showEditorTitleMenuBarIcons": false,
     "code-runner.showRunIconInEditorTitleMenu": false,
     "editor.tabSize": 2,
     "vim.normalModeKeyBindingsNonRecursive": [
@@ -115,7 +110,6 @@
     "explorer.confirmDragAndDrop": false,
     "markdown-preview-enhanced.liveUpdate": true,
     "workbench.activityBar.visible": false,
-    "workbench.statusBar.feedback.visible": false,
     "workbench.editor.tabCloseButton": "off",
     "workbench.editor.tabSizing": "shrink",
     "workbench.statusBar.visible": true,
@@ -123,19 +117,6 @@
     "colorHelper.disableTransparent": true,
     "colorHelper.resident": true,
     "editor.minimap.renderCharacters": false,
-    "bracket-pair-colorizer-2.colorMode": "Independent",
-    "bracket-pair-colorizer-2.showHorizontalScopeLine": false,
-    "bracket-pair-colorizer-2.activeScopeCSS": [
-        "borderStyle : solid",
-        "borderWidth : 1px",
-        "borderColor : {color}; opacity: 0.2",
-        "backgroundColor : {color}"
-    ],
-    "bracket-pair-colorizer-2.scopeLineCSS": [
-        "borderStyle : solid",
-        "borderWidth : 1px",
-        "borderColor : {color}; opacity: 0.4"
-    ],
     "workbench.colorTheme": "Atom One Dark",
     "workbench.iconTheme": "material-icon-theme",
     "vs-kubernetes": {
@@ -163,7 +144,6 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "[html]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
@@ -188,5 +168,6 @@
     },
     "html.mirrorCursorOnMatchingTag": false,
     "todo-tree.tree.showScanModeButton": false,
-    "terminal.external.osxExec": "iTerm.app"
+    "terminal.external.osxExec": "iTerm.app",
+    "window.zoomLevel": 0
 }
