@@ -1,20 +1,25 @@
 {
     "launch": {
+
         "version": "0.2.0",
-        "configurations": [
-            {
-                "type": "node",
-                "request": "launch",
-                "name": "AVA Current File",
-                "program": "${workspaceRoot}/node_modules/ava/profile.js",
-                "args": [
-                    "${file}"
-                ],
-                "skipFiles": [
-                    "<node_internals>/**/*.js"
-                ]
-            }
-        ],
+        "configurations": [{
+            "type": "node",
+            "request": "launch",
+            "name": "AVA Current File",
+            "program": "${workspaceRoot}/node_modules/ava/profile.js",
+            "args": [
+                "${file}"
+            ],
+            "skipFiles": [
+                "<node_internals>/**/*.js"
+            ]
+        }, {
+            "name": "Attach to Node (restart)",
+            "type": "node",
+            "request": "attach",
+            "restart": true,
+            "port": 9229
+        }],
         "compounds": []
     },
     "gitlens.advanced.messages": {
@@ -41,6 +46,7 @@
         "loggable",
         "promisify",
         "ratelimit",
+        "shopify",
         "signup",
         "theming",
         "webhooks"
@@ -122,7 +128,8 @@
     "vs-kubernetes": {
         "vs-kubernetes.helm-path": "/Users/willhoag/.vs-kubernetes/tools/helm/darwin-amd64/helm",
         "vs-kubernetes.draft-path": "/Users/willhoag/.vs-kubernetes/tools/draft/darwin-amd64/draft",
-        "vs-kubernetes.minikube-path": "/Users/willhoag/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
+        "vs-kubernetes.minikube-path": "/Users/willhoag/.vs-kubernetes/tools/minikube/darwin-amd64/minikube",
+        "vs-kubernetes.minikube-path.mac": "/Users/willhoag/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
     },
     "gitlens.codeLens.enabled": false,
     "code-runner.runInTerminal": true,
@@ -157,7 +164,7 @@
         "type": "none"
     },
     "todo-tree.filtering.excludeGlobs": [
-        "**/node_modules"
+        "**/node_modules/**/*"
     ],
     "liveServer.settings.donotShowInfoMsg": true,
     "gitlens.menus": {
@@ -169,5 +176,6 @@
     "html.mirrorCursorOnMatchingTag": false,
     "todo-tree.tree.showScanModeButton": false,
     "terminal.external.osxExec": "iTerm.app",
-    "window.zoomLevel": 0
+    "window.zoomLevel": 0,
+    "javascript.updateImportsOnFileMove.enabled": "always"
 }
