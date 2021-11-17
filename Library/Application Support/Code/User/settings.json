@@ -129,7 +129,8 @@
         "vs-kubernetes.helm-path": "/Users/willhoag/.vs-kubernetes/tools/helm/darwin-amd64/helm",
         "vs-kubernetes.draft-path": "/Users/willhoag/.vs-kubernetes/tools/draft/darwin-amd64/draft",
         "vs-kubernetes.minikube-path": "/Users/willhoag/.vs-kubernetes/tools/minikube/darwin-amd64/minikube",
-        "vs-kubernetes.minikube-path.mac": "/Users/willhoag/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
+        "vs-kubernetes.minikube-path.mac": "/Users/willhoag/.vs-kubernetes/tools/minikube/darwin-amd64/minikube",
+        "vscode-kubernetes.minikube-path.mac": "/Users/willhoag/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
     },
     "gitlens.codeLens.enabled": false,
     "code-runner.runInTerminal": true,
@@ -177,5 +178,20 @@
     "todo-tree.tree.showScanModeButton": false,
     "terminal.external.osxExec": "iTerm.app",
     "window.zoomLevel": 0,
-    "javascript.updateImportsOnFileMove.enabled": "always"
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "markdown-pdf.breaks": true,
+    "markdown-pdf.displayHeaderFooter": false,
+    "editor.wordWrap": "on",
+    "emmet.triggerExpansionOnTab": true,
+    "redhat.telemetry.enabled": false,
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "XXX",
+        "[ ]",
+        "[x]"
+    ],
+    "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)"
 }
