@@ -2,6 +2,7 @@
     name = Will Hoag
     email = dev@willhoag.com
     username = willhoag
+    signingkey = D8A74D3B9CF41F8C6CC8BEA3C3F795670F31C6EC
 [alias]
     tags = tag
     stashes = stash list
@@ -84,10 +85,10 @@
 [ghi]
     token = !security find-internet-password -a willhoag -s github.com -l 'ghi token' -w
 [diff]
-  tool = icdiff
+    tool = icdiff
 [difftool]
-  prompt = false
+    prompt = false
 [difftool "icdiff"]
-  cmd = /usr/local/bin/icdiff --line-numbers $LOCAL $REMOTE
+    cmd = /usr/local/bin/icdiff --line-numbers $LOCAL $REMOTE
 [fetch]
-	prune = true
+    prune = true

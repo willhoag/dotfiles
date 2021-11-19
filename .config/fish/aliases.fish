@@ -1,8 +1,8 @@
 # use coreutils ls
 # group by directories first
 # write human readable file sizes
-if test -e /usr/local/bin/gls
-    alias ls='/usr/local/bin/gls --color -h --group-directories-first'
+if test -e /opt/homebrew/bin/gls
+    alias ls='/opt/homebrew/bin/gls --color -h --group-directories-first'
 end
 
 alias o 'open'

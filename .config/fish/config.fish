@@ -1,19 +1,12 @@
-test -e $HOME/.iterm2_shell_integration.fish ; and source $HOME/.iterm2_shell_integration.fish
+eval (/opt/homebrew/bin/brew shellenv)
 
-export EDITOR="nvim"
+export EDITOR="vim"
 export QUOTING_STYLE=literal
 
 . ~/.config/fish/notes.fish
 . ~/.config/fish/aliases.fish
 
-if type -q nvm
-    nvm use default
-end
+fish_vi_key_bindings
 
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[ -f /Users/willhoag/.nvm/versions/node/v10.21.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.fish ]; and . /Users/willhoag/.nvm/versions/node/v10.21.0/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.fish
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[ -f /Users/willhoag/.nvm/versions/node/v10.21.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.fish ]; and . /Users/willhoag/.nvm/versions/node/v10.21.0/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.fish
+# Fixes gpg needed for signing commits in git (not sure why the need for this extra step)
+export GPG_TTY=(tty)

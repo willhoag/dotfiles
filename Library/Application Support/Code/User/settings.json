@@ -35,7 +35,7 @@
     "editor.fontSize": 15,
     "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontLigatures": true,
-    "terminal.integrated.shell.osx": "/usr/local/bin/fish",
+    "terminal.integrated.shell.osx": "/opt/homebrew/bin/fish",
     "terminal.integrated.fontSize": 15,
     "terminal.integrated.fontWeight": "100",
     "terminal.integrated.fontWeightBold": "300",
@@ -176,7 +176,6 @@
     },
     "html.mirrorCursorOnMatchingTag": false,
     "todo-tree.tree.showScanModeButton": false,
-    "terminal.external.osxExec": "iTerm.app",
     "window.zoomLevel": 0,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "markdown-pdf.breaks": true,
@@ -193,5 +192,8 @@
         "[ ]",
         "[x]"
     ],
-    "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)"
+    "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+    "settingsSync.ignoredSettings": [
+        "terminal.integrated.automationShell.osx"
+    ]
 }
