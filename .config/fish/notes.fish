@@ -16,7 +16,8 @@ function notes-search
 end
 
 function notes-list
-    ls ~/Documents/notes/
+    # ls -htF ~/Documents/notes/ | less
+    tree -tDrNi ~/Documents/notes/ | less -i
 end
 
 function notes

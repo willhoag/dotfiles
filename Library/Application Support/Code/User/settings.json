@@ -1,25 +1,27 @@
 {
     "launch": {
-
         "version": "0.2.0",
-        "configurations": [{
-            "type": "node",
-            "request": "launch",
-            "name": "AVA Current File",
-            "program": "${workspaceRoot}/node_modules/ava/profile.js",
-            "args": [
-                "${file}"
-            ],
-            "skipFiles": [
-                "<node_internals>/**/*.js"
-            ]
-        }, {
-            "name": "Attach to Node (restart)",
-            "type": "node",
-            "request": "attach",
-            "restart": true,
-            "port": 9229
-        }],
+        "configurations": [
+            {
+                "type": "node",
+                "request": "launch",
+                "name": "AVA Current File",
+                "program": "${workspaceRoot}/node_modules/ava/profile.js",
+                "args": [
+                    "${file}"
+                ],
+                "skipFiles": [
+                    "<node_internals>/**/*.js"
+                ]
+            },
+            {
+                "name": "Attach to Node (restart)",
+                "type": "node",
+                "request": "attach",
+                "restart": true,
+                "port": 9229
+            }
+        ],
         "compounds": []
     },
     "gitlens.advanced.messages": {
@@ -35,7 +37,7 @@
     "editor.fontSize": 15,
     "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontLigatures": true,
-    "terminal.integrated.shell.osx": "/opt/homebrew/bin/fish",
+    "terminal.integrated.shell.osx": "/Users/willhoag/Code/scripts/code-shell",
     "terminal.integrated.fontSize": 15,
     "terminal.integrated.fontWeight": "100",
     "terminal.integrated.fontWeightBold": "300",
@@ -111,11 +113,33 @@
                 "g",
                 "k"
             ]
+        },
+        {
+            "before": [
+                "=",
+                "="
+            ],
+            "commands": [
+                {
+                    "command": "editor.action.reindentselectedlines",
+                }
+            ]
+        }
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [
+                "="
+            ],
+            "commands": [
+                {
+                    "command": "editor.action.reindentselectedlines",
+                }
+            ]
         }
     ],
     "explorer.confirmDragAndDrop": false,
     "markdown-preview-enhanced.liveUpdate": true,
-    "workbench.activityBar.visible": false,
     "workbench.editor.tabCloseButton": "off",
     "workbench.editor.tabSizing": "shrink",
     "workbench.statusBar.visible": true,
@@ -125,13 +149,6 @@
     "editor.minimap.renderCharacters": false,
     "workbench.colorTheme": "Atom One Dark",
     "workbench.iconTheme": "material-icon-theme",
-    "vs-kubernetes": {
-        "vs-kubernetes.helm-path": "/Users/willhoag/.vs-kubernetes/tools/helm/darwin-amd64/helm",
-        "vs-kubernetes.draft-path": "/Users/willhoag/.vs-kubernetes/tools/draft/darwin-amd64/draft",
-        "vs-kubernetes.minikube-path": "/Users/willhoag/.vs-kubernetes/tools/minikube/darwin-amd64/minikube",
-        "vs-kubernetes.minikube-path.mac": "/Users/willhoag/.vs-kubernetes/tools/minikube/darwin-amd64/minikube",
-        "vscode-kubernetes.minikube-path.mac": "/Users/willhoag/.vs-kubernetes/tools/minikube/darwin-amd64/minikube"
-    },
     "gitlens.codeLens.enabled": false,
     "code-runner.runInTerminal": true,
     "code-runner.preserveFocus": false,
@@ -140,11 +157,6 @@
     "vim.foldfix": true,
     "vim.sneak": true,
     "yaml.format.enable": true,
-    "cloudcode.gke": {
-        "projectIds": [
-            "cardsaholic"
-        ]
-    },
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
@@ -153,7 +165,7 @@
     },
     "editor.suggestSelection": "first",
     "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "vscode.html-language-features"
     },
     "explorer.confirmDelete": false,
     "todo-tree.highlights.customHighlight": {
@@ -175,7 +187,6 @@
         }
     },
     "html.mirrorCursorOnMatchingTag": false,
-    "todo-tree.tree.showScanModeButton": false,
     "window.zoomLevel": 0,
     "javascript.updateImportsOnFileMove.enabled": "always",
     "markdown-pdf.breaks": true,
@@ -194,6 +205,13 @@
     ],
     "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
     "settingsSync.ignoredSettings": [
-        "terminal.integrated.automationShell.osx"
-    ]
+        "terminal.integrated.automationShell.osx",
+        "terminal.integrated.fontFamily"
+    ],
+    "terminal.integrated.fontFamily": "MesloLGS Nerd Font",
+    "html.format.wrapLineLength": 0,
+    "vim.neovimPath": "/opt/homebrew/bin/nvim",
+    "liveServer.settings.donotVerifyTags": true,
+    "workbench.activityBar.visible": false,
+    "debug.javascript.autoAttachFilter": "onlyWithFlag"
 }

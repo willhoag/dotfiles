@@ -7,6 +7,18 @@ end
 
 alias o 'open'
 
+# https://formulae.brew.sh/formula/thefuck
+thefuck --alias | source
+
+function reload-config
+    source ~/.config/fish/config.fish
+end
+
+function hint -a tool
+    # "https://raw.github.com/hazeorid/devhints.io/gh-pages/$tool.md"
+    open https://devhints.io/$tool
+end
+
 # tmux
 function tma -a name
     tmux attach -t $name; or tmux new -s $name\n

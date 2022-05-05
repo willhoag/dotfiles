@@ -92,3 +92,5 @@
     cmd = /usr/local/bin/icdiff --line-numbers $LOCAL $REMOTE
 [fetch]
     prune = true
+[advice]
+	detachedHead = false
