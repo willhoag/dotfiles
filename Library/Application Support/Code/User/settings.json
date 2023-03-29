@@ -212,6 +212,29 @@
     "html.format.wrapLineLength": 0,
     "vim.neovimPath": "/opt/homebrew/bin/nvim",
     "liveServer.settings.donotVerifyTags": true,
+    "debug.javascript.autoAttachFilter": "onlyWithFlag",
+    "todo-tree.general.statusBar": "current file",
+    "todo-tree.highlights.enabled": false,
+    "MinifyAll.terserMinifyOptions": {
+        "mangle": false,
+        "compress": {
+            "drop_console": true,
+            "dead_code": false,
+            "keep_fnames": false,
+            "keep_classnames": false
+        }
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "liveServer.settings.host": "localhost",
     "workbench.activityBar.visible": false,
-    "debug.javascript.autoAttachFilter": "onlyWithFlag"
+    "emmet.includeLanguages": {
+        "mdx": "html"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "vscode-pets.petColor": "purple",
+    "vscode-pets.petType": "chicken"
 }

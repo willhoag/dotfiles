@@ -1,23 +1,23 @@
 # Notes
 function notes-read
-    ls ~/Documents/notes/ | grep -i "$argv" | head -1 | xargs -I @ less ~/Documents/notes/@
+    ls $NOTES_FOLDER | grep -i "$argv" | head -1 | xargs -I @ less $NOTES_FOLDER@
 end
 
 function notes-edit
-    ls ~/Documents/notes/ | grep -i "$argv" | head -1 | tr -d '\n' | xargs -0 -I @ $EDITOR ~/Documents/notes/@
+    ls $NOTES_FOLDER | grep -i "$argv" | head -1 | tr -d '\n' | xargs -0 -I @ $EDITOR $NOTES_FOLDER@
 end
 
 function notes-new
-    eval $EDITOR ~/Documents/notes/"$argv"
+    eval $EDITOR $NOTES_FOLDER"$argv"
 end
 
 function notes-search
-    ls ~/Documents/notes/ | grep -i --color=always "$argv" | more -R
+    ls $NOTES_FOLDER | grep -i --color=always "$argv" | more -R
 end
 
 function notes-list
-    # ls -htF ~/Documents/notes/ | less
-    tree -tDrNi ~/Documents/notes/ | less -i
+    # ls -htF $NOTES_FOLDER | less
+    tree -tDrNi $NOTES_FOLDER | less -i
 end
 
 function notes

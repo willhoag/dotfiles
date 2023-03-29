@@ -44,10 +44,6 @@ command -v emacs > /dev/null; and begin
     end
 end
 
-command -v terminal_velocity > /dev/null; and begin
-    alias nv 'terminal_velocity ~/Documents/notes'
-end
-
 if type notes > /dev/null
     alias n 'notes'
 end
@@ -73,6 +69,10 @@ function fish-k8s
     set -g theme_display_k8s_context $argv
 end
 
+function list_rename -a delimiter -a fileName -d "Rename multiple files from a multiline \$file where before and after are separated by a \$delimiter. Required Args: \$delimeter \$file"
+  sed 's/^/mv -vi "/;s/'$delimiter'/" "/;s/$/";/' < $fileName | bash
+end
+
 # alias for dictionary lookups
 alias define 'sdcv'
 
@@ -81,13 +81,6 @@ alias uid 'uuidgen | tr -d '-' | tr A-Z a-z'
 # Turn on and off terminal wrap
 alias wrap-on 'tput rmam'
 alias wrap-off 'tput smam'
-
-# pretty printing json
-# if ! type "$jq" > /dev/null; then
-#     alias prettyjson 'jq'
-# else
-#     alias prettyjson 'python -m json.tool'
-# fi
 
 # greeting
 # cowfortune () {
@@ -98,28 +91,6 @@ alias wrap-off 'tput smam'
 
 # Load a .env file
 alias env.load 'export (cat .env | xargs)'
-
-# TODO -- Use https://github.com/adambrenecki/virtualfish
-# if test -e /usr/local/bin/virtualenvwrapper.sh
-#   export WORKON_HOME=$HOME/.virtualenvs
-#   export PIP_VIRTUALENV_BASE=$WORKON_HOME
-#   export PIP_RESPECT_VIRTUALENV=true
-#   export VIRTUAL_ENV_DISABLE_PROMPT=true
-#   source /usr/local/bin/virtualenvwrapper.sh
-#
-#   # virtualenv aliases
-#   # http://blog.doughellmann.com/2010/01/virtualenvwrapper-tips-and-tricks.html
-#   alias v='workon'
-#   alias v.deactivate='deactivate'
-#   alias v.mk='mkvirtualenv --no-site-packages'
-#   alias v.mk_withsitepackages='mkvirtualenv'
-#   alias v.rm='rmvirtualenv'
-#   alias v.switch='workon'
-#   alias v.add2virtualenv='add2virtualenv'
-#   alias v.cdsitepackages='cdsitepackages'
-#   alias v.cd='cdvirtualenv'
-#   alias v.lssitepackages='lssitepackages'
-# end
 
 # npm
 alias ni 'npm install'
@@ -186,8 +157,6 @@ end
 
 
 # Git log colors.
-alias git 'hub' # github wrapper for git
-
 # https://github.com/sorin-ionescu/prezto/blob/master/modules/git/alias.zsh
 set _git_log_medium_format '%C(bold)Commit:%C(reset) %C(green)%H%C(red)%d%n%C(bold)Author:%C(reset) %C(cyan)%an <%ae>%n%C(bold)Date:%C(reset)   %C(blue)%ai (%ar)%C(reset)%n%+B'
 set _git_log_oneline_format '%C(green)%h%C(reset) %s%C(red)%d%C(reset)%n'
