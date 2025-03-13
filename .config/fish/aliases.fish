@@ -156,6 +156,8 @@ function kmenv
 end
 
 
+alias ghc 'gh repo create --private --source=. --remote=origin && git push -u --all && gh browse'
+
 # Git log colors.
 # https://github.com/sorin-ionescu/prezto/blob/master/modules/git/alias.zsh
 set _git_log_medium_format '%C(bold)Commit:%C(reset) %C(green)%H%C(red)%d%n%C(bold)Author:%C(reset) %C(cyan)%an <%ae>%n%C(bold)Date:%C(reset)   %C(blue)%ai (%ar)%C(reset)%n%+B'

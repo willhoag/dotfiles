@@ -2,7 +2,7 @@
     name = Will Hoag
     email = dev@willhoag.com
     username = willhoag
-	signingkey = D8A74D3B9CF41F8C6CC8BEA3C3F795670F31C6EC
+	signingkey = /Users/willhoag/.ssh/id_ed25519.pub
 [alias]
     tags = tag
     stashes = stash list
@@ -81,9 +81,10 @@
 [help]
     autocorrect = 1
 [commit]
-	gpgsign = false
+	gpgsign = true
 [gpg]
     program = gpg
+	format = ssh
 [ghi]
     token = !security find-internet-password -a willhoag -s github.com -l 'ghi token' -w
 [diff]
@@ -96,3 +97,5 @@
     prune = true
 [advice]
 	detachedHead = false
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign

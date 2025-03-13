@@ -3,18 +3,6 @@
         "version": "0.2.0",
         "configurations": [
             {
-                "type": "node",
-                "request": "launch",
-                "name": "AVA Current File",
-                "program": "${workspaceRoot}/node_modules/ava/profile.js",
-                "args": [
-                    "${file}"
-                ],
-                "skipFiles": [
-                    "<node_internals>/**/*.js"
-                ]
-            },
-            {
                 "name": "Attach to Node (restart)",
                 "type": "node",
                 "request": "attach",
@@ -30,14 +18,11 @@
         "suppressWelcomeNotice": true
     },
     "editor.minimap.enabled": false,
-    "editor.formatOnSave": false,
-    "prettier.semi": false,
     "prettier.singleQuote": true,
     "gitlens.keymap": "alternate",
     "editor.fontSize": 15,
     "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontLigatures": true,
-    "terminal.integrated.shell.osx": "/Users/willhoag/Code/scripts/code-shell",
     "terminal.integrated.fontSize": 15,
     "terminal.integrated.fontWeight": "100",
     "terminal.integrated.fontWeightBold": "300",
@@ -50,11 +35,8 @@
         "ratelimit",
         "shopify",
         "signup",
-        "theming",
         "webhooks"
     ],
-    "zenMode.fullScreen": false,
-    "zenMode.hideStatusBar": false,
     "gitlens.currentLine.enabled": false,
     "code-runner.showRunIconInEditorTitleMenu": false,
     "editor.tabSize": 2,
@@ -121,7 +103,7 @@
             ],
             "commands": [
                 {
-                    "command": "editor.action.reindentselectedlines",
+                    "command": "editor.action.reindentselectedlines"
                 }
             ]
         }
@@ -133,16 +115,15 @@
             ],
             "commands": [
                 {
-                    "command": "editor.action.reindentselectedlines",
+                    "command": "editor.action.reindentselectedlines"
                 }
             ]
         }
     ],
     "explorer.confirmDragAndDrop": false,
-    "markdown-preview-enhanced.liveUpdate": true,
+    "markdown-preview-enhanced.liveUpdate": false,
     "workbench.editor.tabCloseButton": "off",
     "workbench.editor.tabSizing": "shrink",
-    "workbench.statusBar.visible": true,
     "colorHelper.pickerForm": "simple",
     "colorHelper.disableTransparent": true,
     "colorHelper.resident": true,
@@ -228,13 +209,72 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "liveServer.settings.host": "localhost",
-    "workbench.activityBar.visible": false,
     "emmet.includeLanguages": {
         "mdx": "html"
     },
     "[css]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "vscode-pets.petColor": "purple",
-    "vscode-pets.petType": "chicken"
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": true,
+        "scminput": false,
+        "yaml": false
+    },
+    "editor.inlineSuggest.enabled": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "eslint.codeActionsOnSave.rules": null,
+    "[liquid]": {
+        "editor.defaultFormatter": "Shopify.theme-check-vscode"
+    },
+    "git.openRepositoryInParentFolders": "always",
+    "tailwind-fold.autoFold": false,
+    "workbench.editor.tabActionCloseVisibility": false,
+    "terminal.integrated.profiles.osx": {
+        "bash": {
+            "path": "bash",
+            "args": [
+                "-l"
+            ],
+            "icon": "terminal-bash"
+        },
+        "zsh": {
+            "path": "zsh",
+            "args": [
+                "-l"
+            ]
+        },
+        "fish": {
+            "path": "fish",
+            "args": [
+                "-l"
+            ]
+        },
+        "code-shell": {
+            "path": "code-shell",
+            "icon": "terminal-tmux",
+            "overrideName": true
+        },
+        "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+        },
+        "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell"
+        }
+    },
+    "terminal.integrated.defaultProfile.osx": "code-shell",
+    "github.copilot.editor.enableAutoCompletions": true,
+    "supermaven.otherWarning": false,
+    "window.confirmSaveUntitledWorkspace": false,
+    "window.customTitleBarVisibility": "windowed",
+    "gitlens.views.commitDetails.files.layout": "list",
+    "chat.editing.alwaysSaveWithGeneratedChanges": true,
+    "geminicodeassist.project": "",
+    "zenMode.showTabs": "none",
+    "editor.accessibilitySupport": "off",
+    "git.blame.editorDecoration.enabled": false,
+    "git.blame.statusBarItem.enabled": true
 }

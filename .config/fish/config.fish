@@ -1,4 +1,12 @@
 eval (/opt/homebrew/bin/brew shellenv)
+fnm env --use-on-cd | source
+
+# Theme
+set theme_color_scheme dracula
+
+if test -e /opt/homebrew/bin/vivid
+  export LS_COLORS=(vivid -m 8-bit generate catppuccin-mocha)
+end
 
 export EDITOR="vim"
 export QUOTING_STYLE=literal
