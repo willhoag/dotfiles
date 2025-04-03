@@ -21,7 +21,10 @@ end
 
 # tmux
 function tma -a name
-    tmux attach -t $name; or tmux new -s $name\n
+    if test -z "$name"
+        set name main
+    end
+    tmux new-session -A -s $name
 end
 
 # alias neovim
