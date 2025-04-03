@@ -17,11 +17,8 @@
         "suppressShowKeyBindingsNotice": true,
         "suppressWelcomeNotice": true
     },
-    "editor.minimap.enabled": false,
     "prettier.singleQuote": true,
     "gitlens.keymap": "alternate",
-    "editor.fontSize": 15,
-    "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
     "editor.fontLigatures": true,
     "terminal.integrated.fontSize": 15,
     "terminal.integrated.fontWeight": "100",
@@ -41,6 +38,18 @@
     "code-runner.showRunIconInEditorTitleMenu": false,
     "editor.tabSize": 2,
     "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["s"],
+            "commands": ["flash-vscode.start"]
+        },
+        {
+            "before": ["S"],
+            "commands": ["flash-vscode.startSelection"]
+        },
+        {
+            "before": [ "<BS>" ],
+            "commands": [ "flash-vscode.backspace" ]
+        },
         {
             "before": [
                 "u"
@@ -128,8 +137,7 @@
     "colorHelper.disableTransparent": true,
     "colorHelper.resident": true,
     "editor.minimap.renderCharacters": false,
-    "workbench.colorTheme": "Atom One Dark",
-    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Catppuccin Macchiato",
     "gitlens.codeLens.enabled": false,
     "code-runner.runInTerminal": true,
     "code-runner.preserveFocus": false,
@@ -189,7 +197,6 @@
         "terminal.integrated.automationShell.osx",
         "terminal.integrated.fontFamily"
     ],
-    "terminal.integrated.fontFamily": "MesloLGS Nerd Font",
     "html.format.wrapLineLength": 0,
     "vim.neovimPath": "/opt/homebrew/bin/nvim",
     "liveServer.settings.donotVerifyTags": true,
@@ -206,7 +213,7 @@
         }
     },
     "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "biomejs.biome"
     },
     "liveServer.settings.host": "localhost",
     "emmet.includeLanguages": {
@@ -216,11 +223,12 @@
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "github.copilot.enable": {
-        "*": false,
+        "*": true,
         "plaintext": false,
         "markdown": true,
         "scminput": false,
-        "yaml": false
+        "yaml": false,
+        "java": false
     },
     "editor.inlineSuggest.enabled": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -276,5 +284,14 @@
     "zenMode.showTabs": "none",
     "editor.accessibilitySupport": "off",
     "git.blame.editorDecoration.enabled": false,
-    "git.blame.statusBarItem.enabled": true
+    "git.blame.statusBarItem.enabled": true,
+    "totalTypeScript.hideAllTips": false,
+    "totalTypeScript.hideBasicTips": true,
+    "editor.lineNumbers": "on",
+    "editor.fontSize": 13,
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.fontFamily": "Lilex Nerd Font Mono, JetBrainsMono NFM, FiraCode Nerd Font Mono, Menlo, Monaco, 'Courier New', monospace",
+    "editor.minimap.enabled": false,
+    "breadcrumbs.enabled": false,
+    "workbench.editor.editorActionsLocation": "hidden"
 }
