@@ -15,6 +15,7 @@ set theme_color_scheme dracula
 # Fixes gpg needed for signing commits in git (not sure why the need for this extra step)
 export GPG_TTY=(tty)
 export EDITOR=vim
+export SHELL=/opt/homebrew/bin/fish
 export QUOTING_STYLE=litera
 export NOTES_FOLDER=$HOME/Documents/notes/
 

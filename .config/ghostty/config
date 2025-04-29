@@ -1,0 +1,7 @@
+command = /opt/homebrew/bin/fish
+
+# font-family = JetBrains Mono
+font-family = Lilex Nerd Font Mono
+background-opacity = 0.95
+background-blur = true
+theme = catppuccin-mocha
