@@ -20,6 +20,9 @@ function hint -a tool
 end
 
 # tmux
+alias tml 'tmux list-sessions'
+alias tmK 'tmux kill-server'
+
 function tma -a name
     if test -z "$name"
         set name main
