@@ -27,6 +27,13 @@ function tma -a name
     tmux new-session -A -s $name
 end
 
+function tmk -a name
+    if test -z "$name"
+        return 1
+    end
+    tmux kill-session -t $name
+end
+
 # alias neovim
 command -v nvim >/dev/null; and begin
     alias vim nvim
