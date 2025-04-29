@@ -7,15 +7,16 @@ if test -e /opt/homebrew/bin/starship
     starship init fish | source
 end
 
+# Load node version per directory
 fnm env --use-on-cd | source
 
 set theme_color_scheme dracula
 
 # Fixes gpg needed for signing commits in git (not sure why the need for this extra step)
 export GPG_TTY=(tty)
-export EDITOR="vim"
-export QUOTING_STYLE=literal
-export NOTES_FOLDER="/Users/willhoag/Documents/notes/"
+export EDITOR=vim
+export QUOTING_STYLE=litera
+export NOTES_FOLDER=$HOME/Documents/notes/
 
 . ~/.config/fish/notes.fish
 . ~/.config/fish/aliases.fish

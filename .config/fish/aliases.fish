@@ -5,7 +5,7 @@ if test -e /opt/homebrew/bin/gls
     alias ls='/opt/homebrew/bin/gls --color -h --group-directories-first'
 end
 
-alias o 'open'
+alias o open
 
 # https://formulae.brew.sh/formula/thefuck
 thefuck --alias | source
@@ -28,18 +28,17 @@ function tma -a name
 end
 
 # alias neovim
-command -v nvim > /dev/null; and begin
-    alias vim 'nvim'
+command -v nvim >/dev/null; and begin
+    alias vim nvim
 end
 
 # irc chat
-command -v weechat > /dev/null; and begin
-    alias irc 'weechat'
+command -v weechat >/dev/null; and begin
+    alias irc weechat
 end
 
-
 # emacs
-command -v emacs > /dev/null; and begin
+command -v emacs >/dev/null; and begin
     function em
         emacsclient -t $argv; or begin
             emacs --daemon; and emacsclient -t $argv
@@ -47,8 +46,8 @@ command -v emacs > /dev/null; and begin
     end
 end
 
-if type notes > /dev/null
-    alias n 'notes'
+if type notes >/dev/null
+    alias n notes
 end
 
 # edit
@@ -73,11 +72,11 @@ function fish-k8s
 end
 
 function list_rename -a delimiter -a fileName -d "Rename multiple files from a multiline \$file where before and after are separated by a \$delimiter. Required Args: \$delimeter \$file"
-  sed 's/^/mv -vi "/;s/'$delimiter'/" "/;s/$/";/' < $fileName | bash
+    sed 's/^/mv -vi "/;s/'$delimiter'/" "/;s/$/";/' <$fileName | bash
 end
 
 # alias for dictionary lookups
-alias define 'sdcv'
+alias define sdcv
 
 alias uid 'uuidgen | tr -d '-' | tr A-Z a-z'
 
@@ -107,10 +106,10 @@ alias nr 'npm run'
 alias nf 'npm cache clean; and rm -rf node_modules; and yarn install'
 
 # docker
-alias d "docker"
-alias dm "docker-machine"
-alias dc "docker-compose"
-alias dcl "docker-clean"
+alias d docker
+alias dm docker-machine
+alias dc docker-compose
+alias dcl docker-clean
 alias dl "docker ps -l -q"
 alias dps "docker ps"
 alias dpa "docker ps -a"
@@ -143,21 +142,19 @@ end
 
 # Show all alias related docker
 function dalias
-    alias | grep 'docker' | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/"| sed "s/['|\']//g" | sort
+    alias | grep docker | sed "s/^\([^=]*\)=\(.*\)/\1 => \2/" | sed "s/['|\']//g" | sort
 end
-
 
 # Bash into running container
 function dbash -a name
     docker exec -it (docker ps -aqf "name=$name") bash
 end
 
-alias km 'minikube'
-alias k 'kubectl'
+alias km minikube
+alias k kubectl
 function kmenv
     eval (minikube docker-env); and export DOCKER_MACHINE_NAME="minikube"
 end
-
 
 alias ghc 'gh repo create --private --source=. --remote=origin && git push -u --all && gh browse'
 
@@ -166,9 +163,9 @@ alias ghc 'gh repo create --private --source=. --remote=origin && git push -u --
 set _git_log_medium_format '%C(bold)Commit:%C(reset) %C(green)%H%C(red)%d%n%C(bold)Author:%C(reset) %C(cyan)%an <%ae>%n%C(bold)Date:%C(reset)   %C(blue)%ai (%ar)%C(reset)%n%+B'
 set _git_log_oneline_format '%C(green)%h%C(reset) %s%C(red)%d%C(reset)%n'
 set _git_log_brief_format '%C(green)%h%C(reset) %s%n%C(blue)(%ar by %an)%C(red)%d%C(reset)%n'
-set _git_status_ignore_submodules 'none'
+set _git_status_ignore_submodules none
 
-alias g 'git'
+alias g git
 
 # Branch (b)
 alias gb 'git branch'
@@ -195,7 +192,7 @@ alias gcP 'git cherry-pick --no-commit'
 alias gcr 'git revert'
 alias gcR 'git reset "HEAD^"'
 alias gcs 'git show'
-alias gcl 'git-commit-lost'
+alias gcl git-commit-lost
 
 # Conflict (C)
 alias gCl 'git status | sed -n "s/^.*both [a-z]*ed: *//p"'
@@ -281,18 +278,18 @@ alias gRm 'git remote rename'
 alias gRu 'git remote update'
 alias gRp 'git remote prune'
 alias gRs 'git remote show'
-alias gRb 'git-hub-browse'
+alias gRb git-hub-browse
 
 # Stash (s)
 alias gs 'git stash'
 alias gsa 'git stash apply'
 alias gsx 'git stash drop'
-alias gsX 'git-stash-clear-interactive'
+alias gsX git-stash-clear-interactive
 alias gsl 'git stash list'
-alias gsL 'git-stash-dropped'
+alias gsL git-stash-dropped
 alias gsd 'git stash show --patch --stat'
 alias gsp 'git stash pop'
-alias gsr 'git-stash-recover'
+alias gsr git-stash-recover
 alias gss 'git stash save --include-untracked'
 alias gsS 'git stash save --patch --no-keep-index'
 alias gsw 'git stash save --include-untracked --keep-index'
@@ -304,10 +301,10 @@ alias gSf 'git submodule foreach'
 alias gSi 'git submodule init'
 alias gSI 'git submodule update --init --recursive'
 alias gSl 'git submodule status'
-alias gSm 'git-submodule-move'
+alias gSm git-submodule-move
 alias gSs 'git submodule sync'
 alias gSu 'git submodule foreach git pull origin master'
-alias gSx 'git-submodule-remove'
+alias gSx git-submodule-remove
 
 # Working Copy (w)
 alias gws 'git status --ignore-submodules="$_git_status_ignore_submodules" --short'
